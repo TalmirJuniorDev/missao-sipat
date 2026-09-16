@@ -1,0 +1,19 @@
+{
+  "name": "Missão SIPAT — Segurança em Cada Escolha",
+  "short_name": "Missão SIPAT",
+  "description": "Game educativo da CIPA para a SIPAT 2026.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#061019",
+  "theme_color": "#061019",
+  "icons": [
+    {
+      "src": "/game/pixel/cipa-sipat-16bit.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
