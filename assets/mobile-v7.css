@@ -1,0 +1,206 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+.mobile-fullscreen {
+  display: none;
+}
+
+.mobile-fullscreen .exit-fullscreen-label {
+  display: none;
+}
+
+@media (pointer: coarse) and (orientation: landscape) {
+  html.mobile-browser,
+  html.mobile-browser body {
+    width: 100%;
+    height: var(--app-height, 100dvh);
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  html.mobile-browser .screen-playing {
+    box-sizing: border-box;
+    width: min(var(--app-width, 100vw), 100vw);
+    height: var(--app-height, 100dvh);
+    min-height: 0;
+    position: fixed;
+    top: var(--app-offset-top, 0);
+    left: 0;
+    right: auto;
+    overflow: hidden;
+  }
+
+  html.fullscreen-capable .screen-playing .mobile-fullscreen {
+    color: #dce9df;
+    letter-spacing: .08em;
+    background: #0b3025;
+    border: 1px solid #82c945;
+    align-items: center;
+    gap: 5px;
+    height: 27px;
+    margin-left: 9px;
+    padding: 0 9px;
+    font-size: 10px;
+    font-weight: 900;
+    display: inline-flex;
+  }
+
+  .screen-playing .mobile-fullscreen span {
+    color: #dce9df;
+    margin: 0;
+    font-size: 7px;
+    display: inline;
+  }
+
+  .screen-playing .mobile-fullscreen .fullscreen-icon {
+    font-size: 13px;
+  }
+
+  .screen-playing .mobile-fullscreen .exit-fullscreen-label {
+    display: none;
+  }
+
+  html.game-fullscreen .mobile-fullscreen .enter-fullscreen-label {
+    display: none;
+  }
+
+  html.game-fullscreen .mobile-fullscreen .exit-fullscreen-label {
+    display: inline;
+  }
+
+  html.game-fullscreen .screen-playing .mobile-fullscreen {
+    z-index: 80;
+    position: fixed;
+    top: max(6px, env(safe-area-inset-top));
+    right: max(7px, env(safe-area-inset-right));
+    margin: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+  }
+
+  html.game-fullscreen .screen-playing .game-stats {
+    margin-right: 68px;
+  }
+
+  .screen-playing .game-head > div:first-child {
+    flex-wrap: nowrap;
+  }
+
+  .screen-playing .canvas-frame {
+    grid-template-columns: clamp(72px, 10vw, 96px) minmax(0, 1fr) clamp(70px, 9.5vw, 92px);
+    height: calc(var(--app-height, 100dvh) - 48px);
+    min-height: 0;
+    max-height: calc(var(--app-height, 100dvh) - 48px);
+  }
+
+  .screen-playing .game-stage {
+    width: 100%;
+    max-width: calc((var(--app-height, 100dvh) - 54px) * 2);
+    justify-self: center;
+  }
+
+  .screen-playing .mobile-controls .dpad {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .screen-playing .mobile-controls button {
+    width: clamp(42px, 6.6vw, 50px);
+    height: clamp(42px, 6.6vw, 50px);
+  }
+
+  .screen-playing .mobile-controls .jump-control {
+    width: clamp(52px, 7.8vw, 62px);
+    height: clamp(52px, 7.8vw, 62px);
+  }
+}
+
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 540px) {
+  .screen-playing .game-head {
+    flex-basis: 32px;
+    height: 32px;
+  }
+
+  .screen-playing .game-head h2 {
+    font-size: 14px;
+  }
+
+  .screen-playing .game-stats {
+    height: 30px;
+  }
+
+  .screen-playing .game-stats span {
+    min-width: 58px;
+    padding: 3px 5px;
+  }
+
+  .screen-playing .canvas-frame {
+    height: calc(var(--app-height, 100dvh) - 39px);
+    max-height: calc(var(--app-height, 100dvh) - 39px);
+  }
+
+  .screen-playing .game-stage {
+    max-width: calc((var(--app-height, 100dvh) - 45px) * 2);
+  }
+}
+
+@media (pointer: coarse) and (orientation: landscape) and (max-height: 420px) {
+  .screen-playing .game-wrap {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .screen-playing .game-head {
+    flex-basis: 27px;
+    height: 27px;
+    margin-bottom: 2px;
+  }
+
+  .screen-playing .game-head .eyebrow {
+    display: none;
+  }
+
+  .screen-playing .game-head h2 {
+    font-size: 12px;
+  }
+
+  .screen-playing .game-stats {
+    height: 25px;
+  }
+
+  .screen-playing .game-stats span {
+    min-width: 52px;
+    padding: 2px 4px;
+  }
+
+  .screen-playing .game-stats b {
+    margin-top: 0;
+    font-size: 8px;
+  }
+
+  .screen-playing .canvas-frame {
+    height: calc(var(--app-height, 100dvh) - 31px);
+    max-height: calc(var(--app-height, 100dvh) - 31px);
+  }
+
+  .screen-playing .game-stage {
+    max-width: calc((var(--app-height, 100dvh) - 37px) * 2);
+  }
+
+  .screen-playing .mobile-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .screen-playing .mobile-controls .jump-control {
+    width: 50px;
+    height: 50px;
+  }
+}
