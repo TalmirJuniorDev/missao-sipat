@@ -1,0 +1,41 @@
+MISSÃO SIPAT — PACOTE COMPLETO V5 PARA GITHUB PAGES
+
+Este pacote contém o jogo completo. Não envie a pasta externa “Missao-SIPAT-GitHub-Pages-v5” para dentro do repositório. Abra a pasta e envie todo o conteúdo que está dentro dela.
+
+PASSO A PASSO RECOMENDADO
+
+1. No repositório “missao-sipat”, mantenha a configuração do GitHub Pages como:
+   Branch: main
+   Pasta: / (root)
+
+2. Apague os arquivos antigos do repositório ou substitua todo o conteúdo pelos arquivos deste pacote.
+
+3. Na raiz do repositório devem ficar diretamente:
+   index.html
+   resultados.html
+   runtime-config.js
+   site.webmanifest
+   .nojekyll
+   demais imagens e ícones
+   pasta assets
+   pasta game
+
+4. Clique em “Commit changes”.
+
+5. Aguarde a conclusão em “Actions” ou cerca de 2 a 5 minutos.
+
+6. Teste em janela anônima ou usando Ctrl + F5.
+
+ARQUIVOS VERSIONADOS PARA EVITAR CACHE
+
+index.html chama assets/jogo-v5.js e assets/final-v5.css.
+resultados.html chama assets/resultados-v5.js.
+
+BANCO DE RESULTADOS
+
+Substituir os arquivos do GitHub não apaga o banco. Os dados continuam armazenados na API configurada em runtime-config.js. A exclusão dos resultados somente ocorre pelo botão administrativo “Zerar resultados”.
+
+LINKS
+
+Jogo: https://talmirjuniordev.github.io/missao-sipat/
+Painel: https://talmirjuniordev.github.io/missao-sipat/resultados.html
